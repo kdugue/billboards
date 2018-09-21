@@ -13,16 +13,23 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
+    "ganache-cli": "^6.0.3",
     "morgan": "^1.9.0",
     "nodemon": "^1.18.4",
     "path": "^0.12.7",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sequelize": "^4.38.0",
+    "solc": "^0.4.19",
+    "truffle-hdwallet-provider": "0.0.3",
+    "web3": "^1.0.0-beta.26"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
