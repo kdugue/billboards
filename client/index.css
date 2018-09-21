@@ -1,3 +1,45 @@
 body {
-  background-color: green;
+  background-color: lightblue;
+}
+
+.bid-form {
+  margin-left: 250px;
+}
+
+.header-title {
+  margin: 0px 100px 20px 100px;
+  text-align: center;
+}
+
+.test-board {
+  border: 2px solid black;
+  padding: 15px;
+  margin: 0px 250px 50px 250px;
+  text-align: center;
+}
+
+.input {
+  padding: 5px;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.homepage-links {
+  text-align: center;
 }
