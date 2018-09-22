@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import web3 from "../../ethereum/web3";
 import auction from "../../ethereum/auction";
-import img from "../../public/images/ad1.png";
+import ad1 from "../../public/images/ad1.png";
 
 class SingleAuction extends Component {
   constructor(props) {
@@ -23,17 +23,26 @@ class SingleAuction extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    this.setState({ clicked: true });
     const accounts = await web3.eth.getAccounts();
-    this.setState({ message: "Waiting for transaction to process" });
+    this.setState({
+      message: "Waiting for transaction to process",
+      clicked: true
+    });
     await auction.methods.setBid(this.state.adMessage).send({
       from: accounts[0],
       value: web3.utils.toWei(this.state.bidAmount, "ether")
     });
-    this.setState({ message: "Bid sucessfully submitted" });
+
+    this.setState({
+      message: "Bid sucessfully submitted",
+      bidAmount: "",
+      adMessage: ""
+    });
+
     const bids = await auction.methods.getBids().call({
       from: accounts[0]
     });
+
     await this.setState({
       clicked: false,
       bidders: bids["0"],
@@ -43,7 +52,6 @@ class SingleAuction extends Component {
   }
 
   handleChange(event) {
-    console.log(this.state);
     this.setState({ [event.target.name]: event.target.value });
   }
 
@@ -65,12 +73,10 @@ class SingleAuction extends Component {
         <a href="https://www.tennisworldusa.org/tennis_news/">View website</a>
         <br />
         <br />
-        <img src={img} />
+        <img src={ad1} />
 
         <div className="test-board">
           <p>
-            Sample text here Sample text here Sample text here Sample text here
-            Sample text here Sample text here Sample text here Sample text here
             Sample text here Sample text here Sample text here Sample text here
             Sample text here Sample text here Sample text here Sample text here
             Sample text here{" "}
@@ -79,7 +85,7 @@ class SingleAuction extends Component {
         <div className="bid-form">
           <form onSubmit={this.handleSubmit}>
             <label>
-              Make a bid
+              Ad #1: Make a bid
               <input
                 value={this.state.bidAmount}
                 onChange={this.handleChange}
