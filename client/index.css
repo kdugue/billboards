@@ -43,15 +43,3 @@ body {
 .homepage-links {
   text-align: center;
 }
-
-.target {
-  width: 50%;
-  min-height: 200px;
-  border: 1px solid grey;
-}
-
-.item {
-  padding: 10px;
-  border: 1px solid grey;
-  margin-bottom: 20px;
-}
