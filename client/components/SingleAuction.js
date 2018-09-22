@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import web3 from "../../ethereum/web3";
 import auction from "../../ethereum/auction";
-import ads from "../../public/ad1.png";
+import img from "../../public/images/ad1.png";
 
 class SingleAuction extends Component {
   constructor(props) {
@@ -62,12 +62,10 @@ class SingleAuction extends Component {
           Description: Website dedicated to bringing you the latest in
           professional tennis{" "}
         </p>
-        <p>
-          <a href="https://www.tennisworldusa.org/tennis_news/">View website</a>
-        </p>
-        <img
-          src={"/Users/KemetDugue/Desktop/billboards/public/images/ad1.png"}
-        />
+        <a href="https://www.tennisworldusa.org/tennis_news/">View website</a>
+        <br />
+        <br />
+        <img src={img} />
 
         <div className="test-board">
           <p>
