@@ -95,7 +95,7 @@ class SingleAuction extends Component {
         <h3 className="header-title">
           Bidding Period ends in{" "}
           <Countdown
-            date={"Sat, 22 Sep 2018 21:55:00"}
+            date={"Sat, 22 Sep 2018 21:59:00"}
             renderer={this.renderer}
           />
         </h3>
