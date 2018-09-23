@@ -1,6 +1,8 @@
 body {
-  background-color: lightblue;
+  background-color: #5c5f6d;
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 17px;
 }
 
 .bid-form {
@@ -48,10 +50,6 @@ body {
   }
 }
 
-.homepage-links {
-  text-align: center;
-}
-
 .loader-container {
   margin: 0 auto;
 }
@@ -66,9 +64,14 @@ body {
 ul {
   list-style-type: none;
   margin: 0;
+  margin-right: 10px;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #5c5f6d;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 li {
@@ -85,5 +88,22 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: darkblue;
+  color: white;
+  text-decoration: underline;
+}
+
+.homepage-title {
+  text-align: center;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.homepage-title a {
+  text-decoration: none;
+  color: white;
+}
+
+.homepage-left {
+  text-align: justify;
 }

@@ -11,18 +11,25 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="homepage-links">
-          <ul>
-            <li>
-              <Link to="/">Billboards</Link>
-            </li>
-            <li>
-              <Link to="/">Auctions</Link>
-            </li>
-            <li>
-              <Link to="/">About</Link>
-            </li>
-          </ul>
+        <div>
+          <div>
+            <ul>
+              <div>
+                <li>
+                  <Link to="/">billboards</Link>
+                </li>
+              </div>
+              <div>
+                <li>
+                  <Link to="/">auctions</Link>
+                </li>
+                <li>
+                  <Link to="/">about</Link>
+                </li>
+              </div>
+            </ul>
+          </div>
+
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/auction1" component={SingleAuction} />
