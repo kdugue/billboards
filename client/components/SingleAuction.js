@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import web3 from "../../ethereum/web3";
 import auction from "../../ethereum/auction";
 import ad1 from "../../public/images/ad1.png";
+import Countdown from "react-countdown-now";
 
 class SingleAuction extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class SingleAuction extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.winningBid = this.winningBid.bind(this);
+    this.renderer = this.renderer.bind(this);
   }
 
   async handleSubmit(event) {
@@ -34,9 +35,7 @@ class SingleAuction extends Component {
     });
 
     this.setState({
-      message: "Bid sucessfully submitted",
-      bidAmount: "",
-      adMessage: ""
+      message: "Bid sucessfully submitted"
     });
 
     const bids = await auction.methods.getBids().call({
@@ -49,39 +48,70 @@ class SingleAuction extends Component {
       allBids: bids["1"],
       bidMessages: this.state.bidMessages.concat(this.state.adMessage)
     });
+
+    await this.setState({
+      bidAmount: "",
+      adMessage: ""
+    });
   }
 
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  winningBid() {
-    const highestBid = Math.max.apply(null, this.state.allBids);
-    this.setState({ winningBidMessage: highestBid });
+  renderer({ hours, minutes, seconds, completed }) {
+    if (completed) {
+      const highestBid = Math.max.apply(null, this.state.allBids);
+
+      const highestBidder = this.state.bidders[
+        this.state.allBids.indexOf(highestBid.toString())
+      ];
+
+      const winningMes = this.state.bidMessages[
+        this.state.allBids.indexOf(highestBid.toString())
+      ];
+
+      console.log(this.state);
+      return (
+        <span>
+          COMPLETED,
+          <p>WINNER is: {highestBidder}</p>
+          <p>AD is: {winningMes}</p>
+        </span>
+      );
+    } else {
+      return (
+        <span>
+          {hours}:{minutes}:{seconds}
+        </span>
+      );
+    }
   }
 
   render() {
-    console.log(this.state);
-
     return (
       <div>
-        <h1 className="header-title">Tennis World</h1>
+        <h3 className="header-title">Tennis World</h3>
+        <h3 className="header-title">
+          Bidding Period ends in{" "}
+          <Countdown
+            date={"Sat, 22 Sep 2018 21:17:00"}
+            renderer={this.renderer}
+          />
+        </h3>
+
         <p className="header-title">
           Description: Website dedicated to bringing you the latest in
           professional tennis{" "}
         </p>
+
         <a href="https://www.tennisworldusa.org/tennis_news/">View website</a>
-        <br />
+
         <br />
         <img src={ad1} />
+        <br />
+        <br />
 
-        <div className="test-board">
-          <p>
-            Sample text here Sample text here Sample text here Sample text here
-            Sample text here Sample text here Sample text here Sample text here
-            Sample text here{" "}
-          </p>
-        </div>
         <div className="bid-form">
           <form onSubmit={this.handleSubmit}>
             <label>
@@ -106,13 +136,9 @@ class SingleAuction extends Component {
           </form>
         </div>
 
-        <h2 className={this.state.clicked ? "loader" : ""}>
+        <h3 className={this.state.clicked ? "loader" : ""}>
           {this.state.message}
-        </h2>
-        <button className="bid-form" type="button" onClick={this.winningBid}>
-          Get winning bid
-        </button>
-        <h1>{this.state.winningBidMessage}</h1>
+        </h3>
       </div>
     );
   }

@@ -12,13 +12,9 @@ class App extends Component {
     return (
       <Router>
         <div className="homepage-links">
-          <h1>
-            <Link to="/">Billboards - Advtisements Marketplace</Link>
-          </h1>
-          <div>
-            <Link to="/auction1">Checkout the most recent auction</Link>
-          </div>
-          <br />
+          <h2>
+            <Link to="/">Billboards</Link>
+          </h2>
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/auction1" component={SingleAuction} />

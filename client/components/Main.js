@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Main extends Component {
   constructor(props) {
@@ -7,7 +8,10 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <h1>This is the Homepage</h1>
+        <h1>Welcome to Billboards, a premier ads marketplace</h1>
+        <div>
+          <Link to="/auction1">Checkout the most recent auction</Link>
+        </div>
       </div>
     );
   }
