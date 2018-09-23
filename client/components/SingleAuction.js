@@ -67,16 +67,16 @@ class SingleAuction extends Component {
         this.state.allBids.indexOf(highestBid.toString())
       ];
 
-      const winningMes = this.state.bidMessages[
-        this.state.allBids.indexOf(highestBid.toString())
-      ];
-
+      // const winningMes = this.state.bidMessages[
+      //   this.state.allBids.indexOf(highestBid.toString())
+      // ];
       console.log(this.state);
+
       return (
         <span>
           COMPLETED,
           <p>WINNER is: {highestBidder}</p>
-          <p>AD is: {winningMes}</p>
+          {/* <p>AD is: {winningMes}</p> */}
         </span>
       );
     } else {
@@ -95,7 +95,7 @@ class SingleAuction extends Component {
         <h3 className="header-title">
           Bidding Period ends in{" "}
           <Countdown
-            date={"Sat, 22 Sep 2018 21:17:00"}
+            date={"Sat, 22 Sep 2018 21:55:00"}
             renderer={this.renderer}
           />
         </h3>
