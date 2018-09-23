@@ -30,15 +30,17 @@ class Main extends Component {
               blockchain
             </p>
             <br />
-            <br />
-
-            <p className="line">____________</p>
-            <br />
+            <p className="line">___________</p>
             <br />
             <br />
 
             <div className="auctions-button">
-              <Link to="/auction1">Checkout the most recent auction</Link>
+              <Link to="/auctions/1">Checkout the most recent auction</Link>
+            </div>
+            <br />
+            <br />
+            <div className="auctions-button">
+              <Link to="/auctions">View all auctions</Link>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Main from "./Main";
 import SingleAuction from "./SingleAuction";
+import Auctions from "./Auctions";
 
 class App extends Component {
   constructor(props) {
@@ -21,21 +22,22 @@ class App extends Component {
               </div>
               <div>
                 <li>
-                  <Link to="/">Auctions</Link>
+                  <Link to="/auctions">Auctions</Link>
                 </li>
                 <li>
-                  <Link to="/">About</Link>
+                  <Link to="/about">About</Link>
                 </li>
                 <li>
-                  <Link to="/">FAQ</Link>
+                  <Link to="/faq">FAQ</Link>
                 </li>
               </div>
             </ul>
           </div>
 
           <Switch>
+            <Route exact path="/auctions" component={Auctions} />
             <Route exact path="/" component={Main} />
-            <Route exact path="/auction1" component={SingleAuction} />
+            <Route exact path="/auctions/1" component={SingleAuction} />
           </Switch>
         </div>
       </Router>

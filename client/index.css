@@ -94,7 +94,7 @@ li a:hover {
 
 .homepage-title {
   text-align: center;
-  padding: 50px;
+  padding: 5px 40px 40px 40px;
   display: flex;
   justify-content: space-around;
   overflow: hidden;
@@ -111,12 +111,13 @@ li a:hover {
 }
 
 .nav-bar {
-  margin: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .auctions-button {
-  border: 2px solid black;
-  background: darkgrey;
+  border: 2px solid #3a3c46;
+  background: #5c5f6d;
   border-radius: 10px;
   white-space: normal;
 }
