@@ -12,19 +12,22 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <div>
+          <div className="nav-bar">
             <ul>
               <div>
                 <li>
-                  <Link to="/">billboards</Link>
+                  <Link to="/">Billboards</Link>
                 </li>
               </div>
               <div>
                 <li>
-                  <Link to="/">auctions</Link>
+                  <Link to="/">Auctions</Link>
                 </li>
                 <li>
-                  <Link to="/">about</Link>
+                  <Link to="/">About</Link>
+                </li>
+                <li>
+                  <Link to="/">FAQ</Link>
                 </li>
               </div>
             </ul>
