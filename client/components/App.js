@@ -12,9 +12,17 @@ class App extends Component {
     return (
       <Router>
         <div className="homepage-links">
-          <h2>
-            <Link to="/">Billboards</Link>
-          </h2>
+          <ul>
+            <li>
+              <Link to="/">Billboards</Link>
+            </li>
+            <li>
+              <Link to="/">Auctions</Link>
+            </li>
+            <li>
+              <Link to="/">About</Link>
+            </li>
+          </ul>
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/auction1" component={SingleAuction} />

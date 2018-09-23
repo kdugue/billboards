@@ -106,8 +106,6 @@ class SingleAuction extends Component {
               professional tennis{" "}
             </p>
 
-            <br />
-            <br />
             <img src={ad1} />
           </div>
 
