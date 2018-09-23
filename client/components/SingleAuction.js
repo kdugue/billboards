@@ -26,7 +26,7 @@ class SingleAuction extends Component {
     event.preventDefault();
     const accounts = await web3.eth.getAccounts();
     this.setState({
-      message: "Waiting for transaction to process",
+      message: "",
       clicked: true
     });
     await auction.methods.setBid(this.state.adMessage).send({
@@ -67,16 +67,10 @@ class SingleAuction extends Component {
         this.state.allBids.indexOf(highestBid.toString())
       ];
 
-      // const winningMes = this.state.bidMessages[
-      //   this.state.allBids.indexOf(highestBid.toString())
-      // ];
-      console.log(this.state);
-
       return (
         <span>
           COMPLETED,
           <p>WINNER is: {highestBidder}</p>
-          {/* <p>AD is: {winningMes}</p> */}
         </span>
       );
     } else {
@@ -91,7 +85,6 @@ class SingleAuction extends Component {
   render() {
     return (
       <div>
-        <h3 className="header-title">Tennis World</h3>
         <h3 className="header-title">
           Bidding Period ends in{" "}
           <Countdown
@@ -100,45 +93,59 @@ class SingleAuction extends Component {
           />
         </h3>
 
-        <p className="header-title">
-          Description: Website dedicated to bringing you the latest in
-          professional tennis{" "}
-        </p>
+        <div className="flexed">
+          <div>
+            <h3 className="header-title">
+              {"      "}
+              <a href="https://www.tennisworldusa.org/tennis_news/">
+                Tennis World
+              </a>
+            </h3>
+            <p className="header-title">
+              Description: Website dedicated to bringing you the latest in
+              professional tennis{" "}
+            </p>
 
-        <a href="https://www.tennisworldusa.org/tennis_news/">View website</a>
+            <br />
+            <br />
+            <img src={ad1} />
+          </div>
 
-        <br />
-        <img src={ad1} />
-        <br />
-        <br />
+          <div className="bid-form">
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                Ad #1: Make a bid
+                <input
+                  value={this.state.bidAmount}
+                  onChange={this.handleChange}
+                  type="text"
+                  name="bidAmount"
+                />
+              </label>
+              <label>
+                Text for ad
+                <input
+                  value={this.state.adMessage}
+                  type="text"
+                  name="adMessage"
+                  onChange={this.handleChange}
+                />
+              </label>
+              <input type="submit" value="Submit" />
+              <br />
+              <br />
+              <br />
 
-        <div className="bid-form">
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              Ad #1: Make a bid
-              <input
-                value={this.state.bidAmount}
-                onChange={this.handleChange}
-                type="text"
-                name="bidAmount"
-              />
-            </label>
-            <label>
-              Text for ad
-              <input
-                value={this.state.adMessage}
-                type="text"
-                name="adMessage"
-                onChange={this.handleChange}
-              />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
+              <div className="loader-container">
+                <h3 className={this.state.clicked ? "loader" : ""}>
+                  {this.state.message}
+                </h3>
+              </div>
+            </form>
+          </div>
         </div>
 
-        <h3 className={this.state.clicked ? "loader" : ""}>
-          {this.state.message}
-        </h3>
+        <br />
       </div>
     );
   }
