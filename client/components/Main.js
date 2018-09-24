@@ -24,23 +24,31 @@ class Main extends Component {
             }}
           />
           <div className="homepage-left">
-            <h3>Billboards</h3>
-            <p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <p className="header-tagline">
               Auction-based advertisements marketplace built on the Ethereum
               blockchain
             </p>
-            <br />
             <p className="line">___________</p>
             <br />
+
+            <div className="auctions-button">
+              <Link to="/auctions">View all auctions</Link>
+            </div>
             <br />
 
             <div className="auctions-button">
               <Link to="/auctions/1">Checkout the most recent auction</Link>
             </div>
             <br />
-            <br />
+
             <div className="auctions-button">
-              <Link to="/auctions">View all auctions</Link>
+              <Link to="/about">How it works</Link>
             </div>
           </div>
         </div>

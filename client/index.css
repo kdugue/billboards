@@ -20,6 +20,14 @@ body {
   text-align: center;
 }
 
+.header-title a {
+  color: white;
+}
+
+.header-tagline {
+  font-size: 25px;
+}
+
 .test-board {
   border: 2px solid black;
   padding: 15px;
@@ -117,9 +125,10 @@ li a:hover {
 
 .auctions-button {
   border: 2px solid #3a3c46;
-  background: #5c5f6d;
   border-radius: 10px;
-  white-space: normal;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .particles-js {
@@ -134,4 +143,33 @@ li a:hover {
 
 .line {
   text-align: center;
+}
+
+.auctions-page {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 13%;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }

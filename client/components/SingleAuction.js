@@ -88,58 +88,66 @@ class SingleAuction extends Component {
         <h3 className="header-title">
           Bidding Period ends in{" "}
           <Countdown
-            date={"Sat, 22 Sep 2018 21:59:00"}
+            date={"Mon, 24 Sep 2018 15:10:00"}
             renderer={this.renderer}
           />
         </h3>
+        <br />
+        <br />
 
         <div className="flexed">
-          <div>
-            <h3 className="header-title">
-              {"      "}
+          <div className="flexed-left">
+            <p className="header-title">
               <a href="https://www.tennisworldusa.org/tennis_news/">
                 Tennis World
               </a>
-            </h3>
-            <p className="header-title">
-              Description: Website dedicated to bringing you the latest in
-              professional tennis{" "}
             </p>
-
-            <img src={ad1} />
+            <p className="header-title">
+              Description: Website dedicated to
+              <br />
+              bringing you the latest in professional tennis
+              <br />
+              <br />
+              <img src={ad1} />
+            </p>
           </div>
 
-          <div className="bid-form">
-            <form onSubmit={this.handleSubmit}>
-              <label>
-                Ad #1: Make a bid
-                <input
-                  value={this.state.bidAmount}
-                  onChange={this.handleChange}
-                  type="text"
-                  name="bidAmount"
-                />
-              </label>
-              <label>
-                Text for ad
-                <input
-                  value={this.state.adMessage}
-                  type="text"
-                  name="adMessage"
-                  onChange={this.handleChange}
-                />
-              </label>
-              <input type="submit" value="Submit" />
-              <br />
-              <br />
-              <br />
+          <div>
+            <p>
+              <u>Your Bid Selection</u>
+            </p>
+            <div className="bid-form">
+              <form onSubmit={this.handleSubmit}>
+                <label>
+                  Ad #1: Make a bid
+                  <input
+                    value={this.state.bidAmount}
+                    onChange={this.handleChange}
+                    type="text"
+                    name="bidAmount"
+                  />
+                </label>
+                <label>
+                  Text for ad
+                  <input
+                    value={this.state.adMessage}
+                    type="text"
+                    name="adMessage"
+                    onChange={this.handleChange}
+                  />
+                </label>
+                <input type="submit" value="Submit" />
+                <br />
+                <br />
+                <br />
 
-              <div className="loader-container">
-                <h3 className={this.state.clicked ? "loader" : ""}>
-                  {this.state.message}
-                </h3>
-              </div>
-            </form>
+                <div className="loader-container">
+                  <h3 className={this.state.clicked ? "loader" : ""}>
+                    {this.state.message}
+                  </h3>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
 
