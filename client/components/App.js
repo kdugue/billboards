@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Main from "./Main";
 import SingleAuction from "./SingleAuction";
 import Auctions from "./Auctions";
+import About from "./About";
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class App extends Component {
       <Router>
         <div>
           <div className="nav-bar">
-            <ul>
+            <ul className="nav-bar-ul">
               <div>
                 <li>
                   <Link to="/">Billboards</Link>
@@ -38,6 +39,7 @@ class App extends Component {
             <Route exact path="/auctions" component={Auctions} />
             <Route exact path="/" component={Main} />
             <Route exact path="/auctions/1" component={SingleAuction} />
+            <Route exact path="/about" component={About} />
           </Switch>
         </div>
       </Router>

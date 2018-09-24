@@ -85,6 +85,7 @@ class SingleAuction extends Component {
   render() {
     return (
       <div>
+        <br />
         <h3 className="header-title">
           Bidding Period ends in{" "}
           <Countdown
@@ -92,9 +93,7 @@ class SingleAuction extends Component {
             renderer={this.renderer}
           />
         </h3>
-        <br />
-        <br />
-
+        <br /> <br />
         <div className="flexed">
           <div className="flexed-left">
             <p className="header-title">
@@ -137,10 +136,7 @@ class SingleAuction extends Component {
                   />
                 </label>
                 <input type="submit" value="Submit" />
-                <br />
-                <br />
-                <br />
-
+                <br /> <br /> <br />
                 <div className="loader-container">
                   <h3 className={this.state.clicked ? "loader" : ""}>
                     {this.state.message}
@@ -150,7 +146,6 @@ class SingleAuction extends Component {
             </div>
           </div>
         </div>
-
         <br />
       </div>
     );

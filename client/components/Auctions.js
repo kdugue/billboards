@@ -15,7 +15,9 @@ const Auctions = () => {
             <Countdown date={"Mon, 24 Sep 2018 15:10:00"} />
           </p>
           <p>
-            <Link to="/auctions/1">View auction</Link>
+            <Link to="/auctions/1">
+              <u>View auction</u>
+            </Link>
           </p>
         </div>
       </div>
@@ -25,10 +27,10 @@ const Auctions = () => {
           <u>UPCOMING</u>
         </b>
         <p>
-          Pitchfork: <Countdown date={"Wed, 26 Sep 2018 21:59:00"} />{" "}
+          Pitchfork: <Countdown date={"Wed, 26 Sep 2018 21:59:00"} />
         </p>
         <p>
-          NY Times: <Countdown date={"Thurs, 27 Sep 2018 21:59:00"} />{" "}
+          NY Times: <Countdown date={"Thurs, 27 Sep 2018 21:59:00"} />
         </p>
       </div>
     </div>
