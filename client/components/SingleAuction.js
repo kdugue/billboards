@@ -127,7 +127,7 @@ class SingleAuction extends Component {
                   />
                 </label>
                 <label>
-                  Text for ad
+                  Ad information
                   <input
                     value={this.state.adMessage}
                     type="text"
