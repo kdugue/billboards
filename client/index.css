@@ -168,7 +168,7 @@ select {
 }
 
 input[type="submit"] {
-  width: 100%;
+  width: 50%;
   background-color: #4caf50;
   color: white;
   padding: 14px 20px;
@@ -176,8 +176,26 @@ input[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: width 2s;
 }
 
 .about-page {
   text-align: center;
+}
+
+.view-auction {
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.submit-button {
+  font-size: 19px;
+}
+
+.submit-button:hover {
+  font-size: 19px;
+  width: 100%;
 }

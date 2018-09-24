@@ -31,8 +31,8 @@ class Main extends Component {
             <br />
 
             <p className="header-tagline">
-              Auction-based advertisements marketplace built on the Ethereum
-              blockchain
+              Auction-based marketplace for online advertisements built on the
+              Ethereum blockchain
             </p>
             <p className="line">______________</p>
             <br />

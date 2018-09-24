@@ -67,7 +67,7 @@ class SingleAuction extends Component {
     await alert(
       `
         WINNER is: ${winnerInfo["0"]}
-        Winning bid is: ${winnerInfo["1"]}
+        Winning bid is: ${winnerInfo["1"] / 1000000000000000000} ether
         AD Content is: ${winnerInfo["2"]}`
     );
   }
@@ -79,7 +79,7 @@ class SingleAuction extends Component {
         <h3 className="header-title">
           Bidding Period ends in{" "}
           <Countdown
-            date={"Mon, 24 Sep 2018 05:00:30"}
+            date={"Mon, 24 Sep 2018 15:13:00"}
             onComplete={this.renderer}
           />
         </h3>
@@ -125,7 +125,7 @@ class SingleAuction extends Component {
                     onChange={this.handleChange}
                   />
                 </label>
-                <input type="submit" value="Submit" />
+                <input className="submit-button" type="submit" value="Submit" />
                 <br /> <br /> <br />
                 <div className="loader-container">
                   <h3 className={this.state.clicked ? "loader" : ""}>

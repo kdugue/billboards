@@ -12,11 +12,11 @@ const Auctions = () => {
         <div>
           <p>Tennis World: </p>
           <p>
-            <Countdown date={"Mon, 24 Sep 2018 15:10:00"} />
+            <Countdown date={"Mon, 24 Sep 2018 15:13:00"} />
           </p>
           <p>
-            <Link to="/auctions/1">
-              <u>View auction</u>
+            <Link className="view-auction" to="/auctions/1">
+              <u className="view-auction">View auction</u>
             </Link>
           </p>
         </div>
