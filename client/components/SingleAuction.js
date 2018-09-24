@@ -104,7 +104,7 @@ class SingleAuction extends Component {
             <p className="header-title">
               Description: Website dedicated to
               <br />
-              bringing you the latest in professional tennis
+              bringing you the latest news in professional tennis
               <br />
               <br />
               <img src={ad1} />
