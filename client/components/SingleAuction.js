@@ -59,27 +59,17 @@ class SingleAuction extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  renderer({ hours, minutes, seconds, completed }) {
-    if (completed) {
-      const highestBid = Math.max.apply(null, this.state.allBids);
-
-      const highestBidder = this.state.bidders[
-        this.state.allBids.indexOf(highestBid.toString())
-      ];
-
-      return (
-        <span>
-          COMPLETED,
-          <p>WINNER is: {highestBidder}</p>
-        </span>
-      );
-    } else {
-      return (
-        <span>
-          {hours}:{minutes}:{seconds}
-        </span>
-      );
-    }
+  async renderer() {
+    const accounts = await web3.eth.getAccounts();
+    const winnerInfo = await auction.methods.getWinner().call({
+      from: accounts[0]
+    });
+    await alert(
+      `
+        WINNER is: ${winnerInfo["0"]}
+        Winning bid is: ${winnerInfo["1"]}
+        AD Content is: ${winnerInfo["2"]}`
+    );
   }
 
   render() {
@@ -89,8 +79,8 @@ class SingleAuction extends Component {
         <h3 className="header-title">
           Bidding Period ends in{" "}
           <Countdown
-            date={"Mon, 24 Sep 2018 15:10:00"}
-            renderer={this.renderer}
+            date={"Mon, 24 Sep 2018 05:00:30"}
+            onComplete={this.renderer}
           />
         </h3>
         <br /> <br />

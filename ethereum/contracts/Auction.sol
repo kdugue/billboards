@@ -24,10 +24,18 @@ contract Auction {
     address[] public bidderAccounts;
     uint[] public bids;
     string[] public adText;
+    uint public highestBid;
+    string public winningMessage;
+    address public highestBidder;
 
 
-    function setBid(string _text) public payable {
+    function setBid(string memory _text) public payable {
         require(msg.value > 0.1 ether);
+        if(msg.value > highestBid) {
+            highestBid = msg.value;
+            winningMessage = _text;
+            highestBidder = msg.sender;
+        }
         var bidder = bidders[msg.sender];
         bidder.bidAmount = msg.value;
         bidder.adMessage = _text;
@@ -38,6 +46,10 @@ contract Auction {
 
     function getBids() public view returns (address[], uint[]) {
         return (bidderAccounts, bids);
+    }
+
+    function getWinner() public view returns (address, uint, string) {
+        return (highestBidder, highestBid, winningMessage);
     }
 
 }

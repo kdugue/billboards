@@ -1,6 +1,6 @@
 import web3 from "./web3";
 
-const address = "0x8EE5BA4a86e989775c5147B365B7E0A793336a19";
+const address = "0x30D6722134e19CB4DCB3060a52067371CcB55069";
 
 const abi = [
   {
@@ -24,6 +24,37 @@ const abi = [
   {
     constant: true,
     inputs: [],
+    name: "getWinner",
+    outputs: [
+      { name: "", type: "address" },
+      { name: "", type: "uint256" },
+      { name: "", type: "string" }
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "highestBidder",
+    outputs: [{ name: "", type: "address" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "winningMessage",
+    outputs: [{ name: "", type: "string" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
     name: "getBids",
     outputs: [{ name: "", type: "address[]" }, { name: "", type: "uint256[]" }],
     payable: false,
@@ -37,6 +68,15 @@ const abi = [
     outputs: [],
     payable: true,
     stateMutability: "payable",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "highestBid",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
     type: "function"
   },
   {
