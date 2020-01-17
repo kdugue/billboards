@@ -73,6 +73,8 @@ class SingleAuction extends Component {
   }
 
   render() {
+    const { bidAmount, adMessage, clicked, message } = this.state;
+
     return (
       <div>
         <br />
@@ -110,7 +112,7 @@ class SingleAuction extends Component {
                 <label>
                   Ad #1: Make a bid
                   <input
-                    value={this.state.bidAmount}
+                    value={bidAmount}
                     onChange={this.handleChange}
                     type="text"
                     name="bidAmount"
@@ -119,7 +121,7 @@ class SingleAuction extends Component {
                 <label>
                   Ad information
                   <input
-                    value={this.state.adMessage}
+                    value={adMessage}
                     type="text"
                     name="adMessage"
                     onChange={this.handleChange}
@@ -128,9 +130,7 @@ class SingleAuction extends Component {
                 <input className="submit-button" type="submit" value="Submit" />
                 <br /> <br /> <br />
                 <div className="loader-container">
-                  <h3 className={this.state.clicked ? "loader" : ""}>
-                    {this.state.message}
-                  </h3>
+                  <h3 className={clicked ? "loader" : ""}>{message}</h3>
                 </div>
               </form>
             </div>
